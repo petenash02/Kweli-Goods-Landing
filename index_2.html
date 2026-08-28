@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kweli Goods — Making Safe the Default</title>
+<meta name="description" content="Household and personal care products that are safe by default. Every product is screened for restricted substances and independently certified before it's ever listed. Get notified before launch.">
+
+<!--
+  ============================================================
+  PASTE YOUR TRACKING PIXEL SCRIPT HERE (Meta Pixel, Google Ads, etc.)
+  This is the spot your friend meant when they said "paste the
+  script in the page." Nothing goes here until you have one.
+  ============================================================
+-->
+
+<style>
+  :root {
+    --forest: #1e3a52;
+    --forest-dark: #13273a;
+    --cream: #f5f2ea;
+    --gold: #c17a4e;
+    --ink: #2b2620;
+    --muted: #6b6255;
+    --line: #e3ddd0;
+    --warn-bg: #efe9dd;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.55;
+  }
+
+  .wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  header {
+    padding: 28px 0;
+  }
+
+  .logo {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--forest);
+    text-decoration: none;
+  }
+
+  .hero {
+    padding: 64px 0 72px;
+    text-align: center;
+  }
+
+  .tagline {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 4.5vw, 2.9rem);
+    line-height: 1.15;
+    margin: 0 0 20px;
+    color: var(--forest-dark);
+    font-weight: 700;
+  }
+
+  .sub {
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto 36px;
+  }
+
+  .sub .aside {
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+
+  form.capture {
+    display: flex;
+    gap: 10px;
+    max-width: 460px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  form.capture input[type="email"] {
+    flex: 1 1 260px;
+    padding: 14px 16px;
+    font-size: 1rem;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ink);
+  }
+
+  form.capture input[type="email"]:focus {
+    outline: 2px solid var(--forest);
+    outline-offset: 1px;
+  }
+
+  .btn {
+    padding: 14px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    background: var(--forest);
+    color: #fff;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .btn:hover { background: var(--forest-dark); }
+
+  .form-note {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 12px;
+  }
+
+  .confirm {
+    display: none;
+    font-size: 1rem;
+    color: var(--forest-dark);
+    font-weight: 600;
+    margin-top: 8px;
+    text-align: center;
+  }
+
+  section {
+    padding: 56px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    color: var(--forest-dark);
+    margin: 0 0 28px;
+    text-align: center;
+  }
+
+  .problem {
+    max-width: 640px;
+    margin: 0 auto 32px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 1.05rem;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 720px) {
+    .steps { grid-template-columns: 1fr; }
+  }
+
+  .step {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 28px 22px;
+  }
+
+  .step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--forest);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 14px;
+  }
+
+  .step h3 {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+    color: var(--forest-dark);
+  }
+
+  .step p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .inline-cta {
+    text-align: center;
+  }
+
+  .stakes {
+    background: var(--warn-bg);
+  }
+
+  .stakes .section-title {
+    color: var(--forest-dark);
+  }
+
+  .stakes p.problem {
+    margin-bottom: 32px;
+  }
+
+  .success {
+    background: var(--forest);
+    color: #f4efe3;
+    border-top: none;
+  }
+
+  .success .section-title { color: #fff; }
+
+  .success ul {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+  }
+
+  .success li {
+    padding: 10px 0 10px 30px;
+    position: relative;
+    font-size: 1.02rem;
+  }
+
+  .success li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  .cta-final {
+    text-align: center;
+  }
+
+  .cta-final p.lead {
+    font-size: 1.15rem;
+    color: var(--forest-dark);
+    max-width: 520px;
+    margin: 0 auto 28px;
+  }
+
+  footer {
+    padding: 40px 0 48px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  footer .foot-tagline {
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    font-size: 0.8rem;
+    margin-bottom: 14px;
+  }
+
+  footer nav {
+    margin-bottom: 14px;
+    font-size: 0.85rem;
+  }
+
+  footer nav span.sep {
+    margin: 0 8px;
+    color: var(--line);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">Kweli Goods</a>
+  </div>
+</header>
+
+<div id="top" class="hero">
+  <div class="wrap">
+    <span class="tagline">Making Safe the Default</span>
+    <h1>Household and personal care products that are safe by default.</h1>
+    <p class="sub">Every product must pass a restricted substances screen and carry an independent safety certification before it's ever listed <span class="aside">(see what we check for)</span>, so you can shop confidently and get your time back for what actually matters.</p>
+
+    <form class="capture" action="https://formspree.io/f/mljrzpdl" method="POST">
+      <input type="email" name="email" placeholder="you@email.com" required aria-label="Email address">
+      <button class="btn" type="submit">Get Notified Before Launch</button>
+      <input type="hidden" name="_subject" value="New Kweli Goods early access signup">
+    </form>
+    <p class="confirm">You're on the list. We'll be in touch before launch.</p>
+    <p class="form-note">No spam. Just one note when we're live.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <p class="problem">Finding safe household and personal care products is challenging and time-consuming. Vague, unverified claims make it hard to tell the good ones from the noise. You shouldn't have to wonder whether the things you use every day are safe. We understand, you care about what you're bringing into your home. It shouldn't take this much work to act on that.</p>
+    <div class="inline-cta">
+      <form class="capture" action="https://formspree.io/f/mljrzpdl" method="POST">
+        <input type="email" name="email" placeholder="you@email.com" required aria-label="Email address">
+        <button class="btn" type="submit">Get Notified Before Launch</button>
+        <input type="hidden" name="_subject" value="New Kweli Goods early access signup">
+      </form>
+      <p class="confirm">You're on the list. We'll be in touch before launch.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="section-title">Here's the plan</h2>
+    <div class="steps">
+      <div class="step">
+        <span class="step-num">1</span>
+        <h3>Browse</h3>
+        <p>Everything's already vetted, so there's no second-guessing.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <h3>Shop your way</h3>
+        <p>Grab what you need, pick a ready-made Cabinet, or build your own.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <h3>Set it and go</h3>
+        <p>Subscribe and forget it, or shop whenever's convenient for you.</p>
+      </div>
+    </div>
+    <div class="inline-cta">
+      <form class="capture" action="https://formspree.io/f/mljrzpdl" method="POST">
+        <input type="email" name="email" placeholder="you@email.com" required aria-label="Email address">
+        <button class="btn" type="submit">Get Notified Before Launch</button>
+        <input type="hidden" name="_subject" value="New Kweli Goods early access signup">
+      </form>
+      <p class="confirm">You're on the list. We'll be in touch before launch.</p>
+    </div>
+  </div>
+</section>
+
+<section class="stakes">
+  <div class="wrap">
+    <h2 class="section-title">Without it, nothing changes.</h2>
+    <p class="problem">You continue exposing yourself to unsafe products. You continue feeling overwhelmed and stressed about what you're using. You continue wasting time finding, or not finding, safe products.</p>
+    <div class="inline-cta">
+      <form class="capture" action="https://formspree.io/f/mljrzpdl" method="POST">
+        <input type="email" name="email" placeholder="you@email.com" required aria-label="Email address">
+        <button class="btn" type="submit">Get Notified Before Launch</button>
+        <input type="hidden" name="_subject" value="New Kweli Goods early access signup">
+      </form>
+      <p class="confirm">You're on the list. We'll be in touch before launch.</p>
+    </div>
+  </div>
+</section>
+
+<section class="success">
+  <div class="wrap">
+    <h2 class="section-title">You shouldn't have to choose between convenience and safety. Now you don't have to.</h2>
+    <ul>
+      <li>Easily get and use products that are safe by default.</li>
+      <li>Feel empowered and at ease, with time back for what actually matters.</li>
+      <li>Shop with confidence instead of researching in one place just to buy in another.</li>
+      <li>It shouldn't take a place like Kweli to make this simple (the confusion, the silence, the wasted time), but it does, and now you have it.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="wrap">
+    <h2 class="section-title">Get early access when we launch</h2>
+    <p class="lead">Join the list and we'll let you know the moment Kweli Goods opens.</p>
+    <form class="capture" action="https://formspree.io/f/mljrzpdl" method="POST">
+      <input type="email" name="email" placeholder="you@email.com" required aria-label="Email address">
+      <button class="btn" type="submit">Get Notified Before Launch</button>
+      <input type="hidden" name="_subject" value="New Kweli Goods early access signup">
+    </form>
+    <p class="confirm">You're on the list. We'll be in touch before launch.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-tagline">SAFE BY DEFAULT</div>
+    <nav>
+      <span>About Us</span><span class="sep">&middot;</span><span>Contact Us</span><span class="sep">&middot;</span><span>Standard</span><span class="sep">&middot;</span><span>Privacy Policy</span><span class="sep">&middot;</span><span>FAQs</span>
+    </nav>
+    &copy; <span id="year"></span> Kweli Goods. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Show an inline confirmation instead of leaving the page after any
+  // capture form on the page submits (requires Formspree's AJAX-friendly
+  // fetch option). Works across all repeated CTA forms, not just one.
+  document.querySelectorAll('form.capture').forEach(function (form) {
+    var confirmMsg = form.nextElementSibling;
+    if (!confirmMsg || !confirmMsg.classList.contains('confirm')) { return; }
+
+    form.addEventListener('submit', function (e) {
+      var endpoint = form.getAttribute('action');
+      if (!endpoint || endpoint.indexOf('YOUR_FORM_ID') !== -1) {
+        return; // not configured yet, let default submit happen
+      }
+      e.preventDefault();
+      fetch(endpoint, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function (res) {
+        if (res.ok) {
+          form.style.display = 'none';
+          confirmMsg.style.display = 'block';
+        } else {
+          alert('Something went wrong, please try again.');
+        }
+      }).catch(function () {
+        alert('Something went wrong, please try again.');
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
