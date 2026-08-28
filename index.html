@@ -16,13 +16,14 @@
 
 <style>
   :root {
-    --forest: #1f3d2b;
-    --forest-dark: #14291d;
-    --cream: #faf6ef;
-    --gold: #c8973f;
-    --ink: #26291f;
-    --muted: #5c6259;
-    --line: #e4ddcd;
+    --forest: #1e3a52;
+    --forest-dark: #13273a;
+    --cream: #f5f2ea;
+    --gold: #c17a4e;
+    --ink: #2b2620;
+    --muted: #6b6255;
+    --line: #e3ddd0;
+    --warn-bg: #efe9dd;
   }
 
   * { box-sizing: border-box; }
@@ -85,6 +86,11 @@
     margin: 0 auto 36px;
   }
 
+  .sub .aside {
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+
   form.capture {
     display: flex;
     gap: 10px;
@@ -118,6 +124,7 @@
     background: var(--forest);
     color: #fff;
     cursor: pointer;
+    white-space: nowrap;
   }
 
   .btn:hover { background: var(--forest-dark); }
@@ -134,6 +141,7 @@
     color: var(--forest-dark);
     font-weight: 600;
     margin-top: 8px;
+    text-align: center;
   }
 
   section {
@@ -150,7 +158,7 @@
 
   .problem {
     max-width: 640px;
-    margin: 0 auto;
+    margin: 0 auto 32px;
     text-align: center;
     color: var(--muted);
     font-size: 1.05rem;
@@ -160,6 +168,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 28px;
+    margin-bottom: 40px;
   }
 
   @media (max-width: 720px) {
@@ -197,6 +206,22 @@
     margin: 0;
     color: var(--muted);
     font-size: 0.95rem;
+  }
+
+  .inline-cta {
+    text-align: center;
+  }
+
+  .stakes {
+    background: var(--warn-bg);
+  }
+
+  .stakes .section-title {
+    color: var(--forest-dark);
+  }
+
+  .stakes p.problem {
+    margin-bottom: 32px;
   }
 
   .success {
@@ -240,10 +265,28 @@
   }
 
   footer {
-    padding: 32px 0 48px;
+    padding: 40px 0 48px;
     text-align: center;
     color: var(--muted);
     font-size: 0.85rem;
+  }
+
+  footer .foot-tagline {
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    font-size: 0.8rem;
+    margin-bottom: 14px;
+  }
+
+  footer nav {
+    margin-bottom: 14px;
+    font-size: 0.85rem;
+  }
+
+  footer nav span.sep {
+    margin: 0 8px;
+    color: var(--line);
   }
 </style>
 </head>
@@ -259,21 +302,29 @@
   <div class="wrap">
     <span class="tagline">Making Safe the Default</span>
     <h1>Household and personal care products that are safe by default.</h1>
-    <p class="sub">Every product must pass a restricted substances screen and carry an independent safety certification before it's ever listed — so you can shop confidently and get your time back for what actually matters.</p>
+    <p class="sub">Every product must pass a restricted substances screen and carry an independent safety certification before it's ever listed <span class="aside">(see what we check for)</span>, so you can shop confidently and get your time back for what actually matters.</p>
 
-    <form class="capture" id="notify-form" action="https://formspree.io/f/mljrzpdl" method="POST">
+    <form class="capture" action="https://formspree.io/f/mljrzpdl" method="POST">
       <input type="email" name="email" placeholder="you@email.com" required aria-label="Email address">
-      <button class="btn" type="submit">Get notified before launch</button>
+      <button class="btn" type="submit">Get Notified Before Launch</button>
       <input type="hidden" name="_subject" value="New Kweli Goods early access signup">
     </form>
-    <p class="confirm" id="confirm-msg">You're on the list. We'll be in touch before launch.</p>
+    <p class="confirm">You're on the list. We'll be in touch before launch.</p>
     <p class="form-note">No spam. Just one note when we're live.</p>
   </div>
 </div>
 
 <section>
   <div class="wrap">
-    <p class="problem">Finding safe household and personal care products is challenging and time-consuming. Vague, unverified claims make it hard to tell the good ones from the noise — and you shouldn't have to wonder whether the things you use every day are safe.</p>
+    <p class="problem">Finding safe household and personal care products is challenging and time-consuming. Vague, unverified claims make it hard to tell the good ones from the noise. You shouldn't have to wonder whether the things you use every day are safe. We understand, you care about what you're bringing into your home. It shouldn't take this much work to act on that.</p>
+    <div class="inline-cta">
+      <form class="capture" action="https://formspree.io/f/mljrzpdl" method="POST">
+        <input type="email" name="email" placeholder="you@email.com" required aria-label="Email address">
+        <button class="btn" type="submit">Get Notified Before Launch</button>
+        <input type="hidden" name="_subject" value="New Kweli Goods early access signup">
+      </form>
+      <p class="confirm">You're on the list. We'll be in touch before launch.</p>
+    </div>
   </div>
 </section>
 
@@ -289,13 +340,36 @@
       <div class="step">
         <span class="step-num">2</span>
         <h3>Shop your way</h3>
-        <p>Grab what you need, pick a ready-made Collection, or build your own.</p>
+        <p>Grab what you need, pick a ready-made Cabinet, or build your own.</p>
       </div>
       <div class="step">
         <span class="step-num">3</span>
         <h3>Set it and go</h3>
         <p>Subscribe and forget it, or shop whenever's convenient for you.</p>
       </div>
+    </div>
+    <div class="inline-cta">
+      <form class="capture" action="https://formspree.io/f/mljrzpdl" method="POST">
+        <input type="email" name="email" placeholder="you@email.com" required aria-label="Email address">
+        <button class="btn" type="submit">Get Notified Before Launch</button>
+        <input type="hidden" name="_subject" value="New Kweli Goods early access signup">
+      </form>
+      <p class="confirm">You're on the list. We'll be in touch before launch.</p>
+    </div>
+  </div>
+</section>
+
+<section class="stakes">
+  <div class="wrap">
+    <h2 class="section-title">Without it, nothing changes.</h2>
+    <p class="problem">You continue exposing yourself to unsafe products. You continue feeling overwhelmed and stressed about what you're using. You continue wasting time finding, or not finding, safe products.</p>
+    <div class="inline-cta">
+      <form class="capture" action="https://formspree.io/f/mljrzpdl" method="POST">
+        <input type="email" name="email" placeholder="you@email.com" required aria-label="Email address">
+        <button class="btn" type="submit">Get Notified Before Launch</button>
+        <input type="hidden" name="_subject" value="New Kweli Goods early access signup">
+      </form>
+      <p class="confirm">You're on the list. We'll be in touch before launch.</p>
     </div>
   </div>
 </section>
@@ -307,6 +381,7 @@
       <li>Easily get and use products that are safe by default.</li>
       <li>Feel empowered and at ease, with time back for what actually matters.</li>
       <li>Shop with confidence instead of researching in one place just to buy in another.</li>
+      <li>It shouldn't take a place like Kweli to make this simple (the confusion, the silence, the wasted time), but it does, and now you have it.</li>
     </ul>
   </div>
 </section>
@@ -317,14 +392,19 @@
     <p class="lead">Join the list and we'll let you know the moment Kweli Goods opens.</p>
     <form class="capture" action="https://formspree.io/f/mljrzpdl" method="POST">
       <input type="email" name="email" placeholder="you@email.com" required aria-label="Email address">
-      <button class="btn" type="submit">Notify me</button>
+      <button class="btn" type="submit">Get Notified Before Launch</button>
       <input type="hidden" name="_subject" value="New Kweli Goods early access signup">
     </form>
+    <p class="confirm">You're on the list. We'll be in touch before launch.</p>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
+    <div class="foot-tagline">SAFE BY DEFAULT</div>
+    <nav>
+      <span>About Us</span><span class="sep">&middot;</span><span>Contact Us</span><span class="sep">&middot;</span><span>Standard</span><span class="sep">&middot;</span><span>Privacy Policy</span><span class="sep">&middot;</span><span>FAQs</span>
+    </nav>
     &copy; <span id="year"></span> Kweli Goods. All rights reserved.
   </div>
 </footer>
@@ -332,14 +412,17 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Optional: show an inline confirmation instead of leaving the page after
-  // the hero form submits (requires Formspree's AJAX-friendly fetch option).
-  var form = document.getElementById('notify-form');
-  if (form) {
+  // Show an inline confirmation instead of leaving the page after any
+  // capture form on the page submits (requires Formspree's AJAX-friendly
+  // fetch option). Works across all repeated CTA forms, not just one.
+  document.querySelectorAll('form.capture').forEach(function (form) {
+    var confirmMsg = form.nextElementSibling;
+    if (!confirmMsg || !confirmMsg.classList.contains('confirm')) { return; }
+
     form.addEventListener('submit', function (e) {
       var endpoint = form.getAttribute('action');
       if (!endpoint || endpoint.indexOf('YOUR_FORM_ID') !== -1) {
-        return; // not configured yet, let default submit happen (will 404 harmlessly in dev)
+        return; // not configured yet, let default submit happen
       }
       e.preventDefault();
       fetch(endpoint, {
@@ -349,7 +432,7 @@
       }).then(function (res) {
         if (res.ok) {
           form.style.display = 'none';
-          document.getElementById('confirm-msg').style.display = 'block';
+          confirmMsg.style.display = 'block';
         } else {
           alert('Something went wrong, please try again.');
         }
@@ -357,7 +440,7 @@
         alert('Something went wrong, please try again.');
       });
     });
-  }
+  });
 </script>
 
 </body>
